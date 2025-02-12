@@ -1,0 +1,18 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #71be34;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "DM Sans", sans-serif;
+}
