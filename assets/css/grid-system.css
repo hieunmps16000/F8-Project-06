@@ -15,8 +15,9 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: calc(var(--spacer) / -2);
-    margin-right: calc(var(--spacer) / -2);
+    /* margin-left: calc(var(--spacer) / -2);
+    margin-right: calc(var(--spacer) / -2); */
+    margin: calc(var(--spacer) / -2);
 }
 
 .g-0 {
@@ -27,8 +28,9 @@
 .row[class*="row-cols-"] > *,
 .row > [class*="col-"] {
     flex: 0 0 auto;
-    padding-left: calc(var(--spacer) / 2);
-    padding-right: calc(var(--spacer) / 2);
+    /* padding-left: calc(var(--spacer) / 2);
+    padding-right: calc(var(--spacer) / 2); */
+    padding: calc(var(--spacer) / 2);
 }
 
 .row[class*="row-cols-"] > * {
