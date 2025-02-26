@@ -59,6 +59,14 @@ a {
     text-align: center;
 }
 
+.section-label {
+    color: #5d3bee;
+    font-size: 3.2rem;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -1.28px;
+}
+
 .section-heading {
     color: #080415;
     font-size: 5.6rem;
@@ -595,4 +603,64 @@ a {
     margin-top: 80px;
     color: #080415;
     background: #fff;
+}
+
+/* About */
+.about {
+    padding: 140px 0 70px 0;
+}
+
+.about__label {
+    display: inline-flex;
+    align-items: center;
+}
+
+.about__label::after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    background: url(../img/icons/hand.svg) top center / contain no-repeat;
+}
+
+.about__heading {
+    margin-top: 10px;
+}
+
+.section-desc {
+    width: 570px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about__list {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    column-gap: 140px;
+    width: 946px;
+    margin: 70px auto 0 auto;
+    border-block: 2px solid #08041533;
+}
+
+.about-item {
+    padding: 20px 0;
+}
+
+.about-item__number {
+    color: #080415;
+    font-size: 5.6rem;
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: 1.68px;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+.about-item__desc {
+    color: #51586a;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.67;
 }
