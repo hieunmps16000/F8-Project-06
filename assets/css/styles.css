@@ -10,6 +10,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -578,6 +579,11 @@ a {
     text-decoration: underline;
     text-underline-offset: 2px;
     user-select: none;
+    transition: color 0.25s;
+}
+
+.project-item__link:hover {
+    color: var(--primary-color);
 }
 
 .project-item__image {
@@ -605,6 +611,10 @@ a {
     margin-top: 80px;
     color: #080415;
     background: #fff;
+}
+
+.project__btn:hover {
+    color: var(--primary-color);
 }
 
 /* About */
@@ -643,7 +653,7 @@ a {
     column-gap: 140px;
     width: 946px;
     margin: 70px auto 0 auto;
-    border-block: 2px solid #08041533;
+    border-block: 1px solid #08041533;
 }
 
 .about-item {
@@ -692,6 +702,10 @@ a {
     cursor: pointer;
 }
 
+.video__play:hover {
+    opacity: 0.8;
+}
+
 .video__tag {
     position: absolute;
     bottom: 10px;
@@ -707,9 +721,15 @@ a {
 
 /* Feedback */
 .feedback {
-    padding: 473px 0 74px 0;
+    padding-top: 473px;
     background: #fbfaff;
     text-align: center;
+}
+
+.feedback__inner {
+    position: relative;
+    padding-bottom: 74px;
+    overflow: hidden;
 }
 
 .feedback__list {
@@ -831,6 +851,21 @@ a {
     background: #5d3bee;
     opacity: 1;
     visibility: visible;
+}
+
+.feedback__decor {
+    position: absolute;
+    bottom: -26px;
+    width: 395px;
+    height: 292px;
+}
+
+.feedback__decor-01 {
+    left: 0;
+}
+
+.feedback__decor-02 {
+    right: 0;
 }
 
 /* Question */
@@ -998,7 +1033,7 @@ a {
     width: 1429px;
     max-width: 100%;
     margin: 0 auto;
-    padding: 18px 147px 30px 129px;
+    padding: 18px 125px 30px 129px;
     border-top: 1px solid #0c072033;
 }
 
@@ -1023,6 +1058,10 @@ a {
     font-weight: 400;
     line-height: 1.66;
     letter-spacing: -0.54px;
+}
+
+.footer__link:hover {
+    color: var(--primary-color);
 }
 
 .footer__link::after {
