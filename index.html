@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="./assets/css/reset.css" />
         <link rel="stylesheet" href="./assets/css/grid-system.css" />
         <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
 
         <!-- Embed font -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,36 +28,82 @@
     <body>
         <!-- Header -->
         <header class="header">
-            <nav class="navbar">
-                <!-- Email -->
-                <a class="navbar__email" href="mailto:hi@arif.interactive">
-                    <span class="navbar__email-icon">
-                        <img class="navbar__email-img" src="./assets/img/icons/mail.png" alt="" />
-                    </span>
-                    <span class="navbar__email-text">hi@arif.interactive</span>
-                </a>
+            <div class="container">
+                <nav class="navbar">
+                    <!-- Email -->
+                    <a class="navbar__email" href="mailto:hi@arif.interactive">
+                        <span class="navbar__email-icon">
+                            <img class="navbar__email-img" src="./assets/img/icons/mail.png" alt="" />
+                        </span>
+                        <span class="navbar__email-text">hi@arif.interactive</span>
+                    </a>
+
+                    <!-- Logo -->
+                    <a href="" class="logo">
+                        <img src="./assets/img/logo.png" alt="" />
+                    </a>
+
+                    <!-- Navbar list -->
+                    <ul id="menu__pc" class="navbar__list">
+                        <li>
+                            <a href="#project" class="navbar__link">Projects</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="navbar__link">Journey</a>
+                        </li>
+                        <li>
+                            <a href="#feature" class="navbar__link">Service</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="navbar__link">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Menu mobile -->
+                    <button class="menu-mobile hide-on-pc">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                            <circle opacity="0.2" cx="17" cy="17" r="16" stroke="currentColor" />
+                            <path
+                                d="M10 20H25"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M10 14H25"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Mobile & tablet header -->
+        <header class="mobile-header">
+            <div class="mobile__overlay"></div>
+            <div class="mobile__drawer">
+                <!-- Close menu -->
+                <div class="menu__close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <path
+                            fill="currentColor"
+                            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                        />
+                    </svg>
+                </div>
 
                 <!-- Logo -->
-                <a href="" class="logo">
+                <!-- <a href="" class="logo">
                     <img class="logo__img" src="./assets/img/logo.png" alt="" />
-                </a>
+                </a> -->
 
-                <!-- Navbar list -->
-                <ul class="navbar__list">
-                    <li>
-                        <a href="#project" class="navbar__link">Projects</a>
-                    </li>
-                    <li>
-                        <a href="#about" class="navbar__link">Journey</a>
-                    </li>
-                    <li>
-                        <a href="#feature" class="navbar__link">Service</a>
-                    </li>
-                    <li>
-                        <a href="#contact" class="navbar__link">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+                <ul id="menu__mobile" class="menu__mobile"></ul>
+            </div>
         </header>
 
         <div class="main">
@@ -265,7 +312,7 @@
 
                     <!-- Feature list -->
                     <div class="feature__list">
-                        <div class="row row-cols-xl-3 row-cols-lg-2">
+                        <div class="row row-cols-xl-3 rpw-cols-md-2 row-cols-1">
                             <div class="col">
                                 <article class="feature-item">
                                     <div class="feature-item__icon">
@@ -307,6 +354,11 @@
                                 </article>
                             </div>
                         </div>
+                        <div class="dots">
+                            <div class="dot"></div>
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -327,7 +379,7 @@
 
                     <!-- Project list -->
                     <div class="project__list">
-                        <div class="row row-cols-xl-2">
+                        <div class="row row-cols-xl-2 row-cols-1">
                             <div class="col">
                                 <article class="project-item">
                                     <div class="project-item__content">
@@ -733,23 +785,29 @@
 
                     <!-- Work station list -->
                     <div class="workstation__list">
-                        <div class="row row-cols-xl-3">
-                            <!-- Workstation item 01 -->
+                        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1">
                             <div class="col">
                                 <div class="workstation-item">
                                     <img src="./assets/img/workstation-01.jpg" alt="" class="workstation-item__img" />
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col hide-on-mobile">
                                 <div class="workstation-item">
                                     <img src="./assets/img/workstation-02.jpg" alt="" class="workstation-item__img" />
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col hide-on-mobile">
                                 <div class="workstation-item">
                                     <img src="./assets/img/workstation-03.jpg" alt="" class="workstation-item__img" />
                                 </div>
                             </div>
+                        </div>
+                        <div class="dots hide-on-pc hide-on-tablet">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                 </div>
@@ -789,48 +847,72 @@
                 </div>
             </section>
         </div>
-    </body>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__top">
-            <nav class="navbar">
-                <!-- Email -->
-                <a class="navbar__email" href="mailto:hi@arif.interactive">
-                    <span class="navbar__email-icon">
-                        <img class="navbar__email-img" src="./assets/img/icons/mail.png" alt="" />
-                    </span>
-                    <span class="navbar__email-text">hi@arif.interactive</span>
-                </a>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__top">
+                <nav class="navbar">
+                    <!-- Email -->
+                    <a class="navbar__email" href="mailto:hi@arif.interactive">
+                        <span class="navbar__email-icon">
+                            <img class="navbar__email-img" src="./assets/img/icons/mail.png" alt="" />
+                        </span>
+                        <span class="navbar__email-text">hi@arif.interactive</span>
+                    </a>
 
-                <!-- Logo -->
-                <a href="" class="logo">
-                    <img class="logo__img" src="./assets/img/logo.png" alt="" />
-                </a>
+                    <!-- Logo -->
+                    <a href="" class="logo">
+                        <img class="logo__img" src="./assets/img/logo.png" alt="" />
+                    </a>
 
-                <!-- Navbar list -->
-                <ul class="navbar__list">
-                    <li>
-                        <a href="" class="navbar__link">Projects</a>
-                    </li>
-                    <li>
-                        <a href="" class="navbar__link">Journey</a>
-                    </li>
-                    <li>
-                        <a href="" class="navbar__link">Service</a>
-                    </li>
-                    <li>
-                        <a href="" class="navbar__link">Contact</a>
-                    </li>
+                    <!-- Navbar list -->
+                    <ul class="navbar__list">
+                        <li>
+                            <a href="" class="navbar__link">Projects</a>
+                        </li>
+                        <li>
+                            <a href="" class="navbar__link">Journey</a>
+                        </li>
+                        <li>
+                            <a href="" class="navbar__link">Service</a>
+                        </li>
+                        <li>
+                            <a href="" class="navbar__link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">©interactiveArif 2021. All rights reserved.</p>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#!" class="footer__link">Privacy Policy</a></li>
+                    <li class="footer__item"><a href="#!" class="footer__link">Terms of Conditions</a></li>
                 </ul>
-            </nav>
-        </div>
-        <div class="footer__bottom">
-            <p class="footer__copyright">©interactiveArif 2021. All rights reserved.</p>
-            <ul class="footer__list">
-                <li class="footer__item"><a href="#!" class="footer__link">Privacy Policy</a></li>
-                <li class="footer__item"><a href="#!" class="footer__link">Terms of Conditions</a></li>
-            </ul>
-        </div>
-    </footer>
+            </div>
+        </footer>
+
+        <script>
+            const menuMobile = document.querySelector("#menu__mobile");
+            const menuPC = document.querySelector("#menu__pc");
+
+            menuMobile.innerHTML = menuPC.innerHTML;
+
+            const menuCloseBtn = document.querySelector(".menu__close-btn");
+            const mobileHeader = document.querySelector(".mobile-header");
+            const menuMobileBtn = document.querySelector(".menu-mobile");
+            const mobileOverlay = document.querySelector(".mobile__overlay");
+
+            menuMobileBtn.addEventListener("click", () => {
+                mobileHeader.classList.add("active");
+            });
+
+            menuCloseBtn.addEventListener("click", () => {
+                mobileHeader.classList.remove("active");
+            });
+
+            mobileOverlay.addEventListener("click", () => {
+                mobileHeader.classList.remove("active");
+            });
+        </script>
+    </body>
 </html>

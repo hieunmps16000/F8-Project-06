@@ -104,7 +104,7 @@ a {
     justify-content: space-between;
     width: 1330px;
     min-height: 100px;
-    max-width: calc(100% - 48px);
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -704,6 +704,12 @@ a {
 
 .video__play:hover {
     opacity: 0.8;
+}
+
+.video__play-img {
+    width: 111px;
+    height: 111px;
+    object-fit: contain;
 }
 
 .video__tag {
