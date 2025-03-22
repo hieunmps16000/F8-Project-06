@@ -40,7 +40,7 @@
 
                     <!-- Logo -->
                     <a href="" class="logo">
-                        <img src="./assets/img/logo.png" alt="" />
+                        <img class="logo__img" src="./assets/img/logo.png" alt="" />
                     </a>
 
                     <!-- Navbar list -->
@@ -84,7 +84,7 @@
         </header>
 
         <!-- Mobile & tablet header -->
-        <header class="mobile-header">
+        <header class="mobile-header hide-on-pc">
             <div class="mobile__overlay"></div>
             <div class="mobile__drawer">
                 <!-- Close menu -->
@@ -325,7 +325,7 @@
                                     </p>
                                 </article>
                             </div>
-                            <div class="col">
+                            <div class="col hide-on-mobile">
                                 <article class="feature-item">
                                     <div class="feature-item__icon">
                                         <img
@@ -341,7 +341,7 @@
                                     </p>
                                 </article>
                             </div>
-                            <div class="col">
+                            <div class="col hide-on-mobile">
                                 <article class="feature-item">
                                     <div class="feature-item__icon">
                                         <img src="./assets/img/icons/phone.png" alt="" class="feature-item__img" />
@@ -575,7 +575,7 @@
                     <h2 class="section-heading question__heading">A few questions clients normlly ask me</h2>
                     <div class="question__list">
                         <!-- Question item 1 -->
-                        <section class="question-item active">
+                        <section class="question-item">
                             <div class="question-item__content">
                                 <h3 class="question-item__title">What is your hourly rate?</h3>
                                 <p class="question-item__answer">
@@ -892,15 +892,18 @@
         </footer>
 
         <script>
-            const menuMobile = document.querySelector("#menu__mobile");
-            const menuPC = document.querySelector("#menu__pc");
+            const $ = document.querySelector.bind(document);
+            const $$ = document.querySelectorAll.bind(document);
+
+            const menuMobile = $("#menu__mobile");
+            const menuPC = $("#menu__pc");
+            const menuCloseBtn = $(".menu__close-btn");
+            const mobileHeader = $(".mobile-header");
+            const menuMobileBtn = $(".menu-mobile");
+            const mobileOverlay = $(".mobile__overlay");
+            const questionItemList = $$(".question-item");
 
             menuMobile.innerHTML = menuPC.innerHTML;
-
-            const menuCloseBtn = document.querySelector(".menu__close-btn");
-            const mobileHeader = document.querySelector(".mobile-header");
-            const menuMobileBtn = document.querySelector(".menu-mobile");
-            const mobileOverlay = document.querySelector(".mobile__overlay");
 
             menuMobileBtn.addEventListener("click", () => {
                 mobileHeader.classList.add("active");
@@ -912,6 +915,20 @@
 
             mobileOverlay.addEventListener("click", () => {
                 mobileHeader.classList.remove("active");
+            });
+
+            // Accordion
+            questionItemList.forEach((item) => {
+                const expandBtn = item.querySelector(".question-item__btn .plus");
+                const collapseBtn = item.querySelector(".question-item__btn .minus");
+
+                expandBtn.onclick = () => {
+                    item.classList.add("active");
+                };
+
+                collapseBtn.onclick = () => {
+                    item.classList.remove("active");
+                };
             });
         </script>
     </body>
