@@ -2,39 +2,27 @@
 /* No media query for `xs` since this is the default in Bootstrap */
 .container,
 .container-fluid {
-    --column-size: 12;
-    --spacer: 40px;
+    --grid-column-size: 12;
+    --grid-gutter-x: 30px;
+    --grid-gutter-y: 30px;
 
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: calc(var(--spacer) / 2);
-    padding-right: calc(var(--spacer) / 2);
+    padding-left: calc(var(--grid-gutter-x) / 2);
+    padding-right: calc(var(--grid-gutter-x) / 2);
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    /* margin-left: calc(var(--spacer) / -2);
-    margin-right: calc(var(--spacer) / -2); */
-    margin: calc(var(--spacer) / -2);
+    margin-top: calc(var(--grid-gutter-y) * -1);
+    margin-left: calc(var(--grid-gutter-x) / -2);
+    margin-right: calc(var(--grid-gutter-x) / -2);
 }
 
 .g-0 {
-    --spacer: 0;
-}
-
-.col,
-.row[class*="row-cols-"] > *,
-.row > [class*="col-"] {
-    flex: 0 0 auto;
-    /* padding-left: calc(var(--spacer) / 2);
-    padding-right: calc(var(--spacer) / 2); */
-    padding: calc(var(--spacer) / 2);
-}
-
-.row[class*="row-cols-"] > * {
-    width: calc(100% / var(--row-cols-number));
+    --grid-gutter-x: 0;
 }
 
 .row-cols-1 {
@@ -63,6 +51,22 @@
 
 .row > [class*="col-"] {
     width: calc(100% / var(--column-size) * var(--column-number));
+}
+
+.row > * {
+    margin-top: var(--grid-gutter-y);
+}
+
+.col,
+.row[class*="row-cols-"] > *,
+.row > [class*="col-"] {
+    flex: 0 0 auto;
+    padding-left: calc(var(--grid-gutter-x) / 2);
+    padding-right: calc(var(--grid-gutter-x) / 2);
+}
+
+.row[class*="row-cols-"] > * {
+    width: calc(100% / var(--row-cols-number));
 }
 
 .col {
@@ -172,13 +176,13 @@
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     .container {
-        --spacer: 20px;
+        --grid-gutter-x: 20px;
 
         max-width: 540px;
     }
 
     .g-sm-0 {
-        --spacer: 0;
+        --grid-gutter-x: 0;
     }
 
     .row-cols-sm-1 {
@@ -305,12 +309,12 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .container {
-        --spacer: 24px;
+        --grid-gutter-x: 24px;
         max-width: 720px;
     }
 
     .g-md-0 {
-        --spacer: 0;
+        --grid-gutter-x: 0;
     }
 
     .row-cols-md-1 {
@@ -437,13 +441,13 @@
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .container {
-        --spacer: 30px;
+        --grid-gutter-x: 30px;
 
         max-width: 960px;
     }
 
     .g-lg-0 {
-        --spacer: 0;
+        --grid-gutter-x: 0;
     }
 
     .row-cols-lg-1 {
@@ -571,11 +575,13 @@
 @media (min-width: 1200px) {
     .container {
         max-width: 1170px;
-        --spacer: 30px;
+        --grid-gutter-x: 30px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .g-xl-0 {
-        --spacer: 0;
+        --grid-gutter-x: 0;
     }
 
     .row-cols-xl-1 {
